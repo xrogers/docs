@@ -36,7 +36,7 @@ const getHeaders = (defaultHeaders = {}) => {
 const fetchHydra = (url, options = {}) =>
   baseFetchHydra(url, {
     ...options,
-    headers: getHeaders,
+    headers: getHeaders(options.headers),
   });
 const RedirectToLogin = () => {
   const introspect = useIntrospection();
